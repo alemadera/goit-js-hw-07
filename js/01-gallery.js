@@ -1,7 +1,9 @@
 import { galleryItems } from './gallery-items.js';
 import * as basicLightbox from 'basiclightbox';
+
 // Obtiene el elemento de la galería en el DOM
 const galleryContainer = document.querySelector('.gallery');
+let instance; // Declarar instance fuera del evento de clic
 
 galleryItems.forEach(item => {
     // Crea un nuevo elemento de imagen
@@ -15,7 +17,7 @@ galleryItems.forEach(item => {
 
     img.addEventListener('click', () => {
         // Abre la imagen a tamaño completo
-        const instance = basicLightbox.create(`
+        instance = basicLightbox.create(`
             <img src="${item.original}" alt="${item.description}" width="800" height="600">
         `);
         instance.show();
