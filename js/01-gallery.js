@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 // Obtiene el elemento de la galería en el DOM
 const galleryContainer = document.querySelector('.gallery');
 
-// Variable para almacenar la instancia de la ventana modal
+// Declara la variable instance fuera del bucle forEach
 let instance;
 
 galleryItems.forEach(item => {
