@@ -32,7 +32,7 @@ function onKeyPress(event) {
     // Verificar si la tecla presionada es la tecla Escape)
     if (event.code === 'Escape') {
         // Cierra la ventana modal si existe una instancia y está abierta
-        if (instance && instance.visible()) {
+        if (instance && typeof instance.visible === 'function' && instance.visible()) {
             instance.close();
             // Elimina el evento de escucha de teclado una vez que se haya cerrado la ventana modal
             document.removeEventListener('keydown', onKeyPress);
