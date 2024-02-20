@@ -3,9 +3,6 @@ import { galleryItems } from './gallery-items.js';
 // Obtiene el elemento de la galería en el DOM
 const galleryContainer = document.querySelector('.gallery');
 
-// Declara la variable instance fuera del bucle forEach
-let instance;
-
 galleryItems.forEach(item => {
     // Crea un nuevo elemento de imagen
     const img = document.createElement('img');
@@ -18,8 +15,8 @@ galleryItems.forEach(item => {
 
     img.addEventListener('click', () => {
         // Abre la imagen a tamaño completo
-        instance = basicLightbox.create(`
-            <img src="${item.original}" alt="${item.description}">
+        const instance = basicLightbox.create(`
+            <img src="${item.original}" alt="${item.description}" width="800" height="600">
         `);
         instance.show();
         // Agrega un evento de escucha para la tecla Escape solo cuando la ventana modal esté abierta
