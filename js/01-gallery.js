@@ -1,5 +1,4 @@
 import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from 'basiclightbox';
 
 // Obtiene el elemento de la galería en el DOM
 const galleryContainer = document.querySelector('.gallery');
